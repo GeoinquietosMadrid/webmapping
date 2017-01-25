@@ -14,12 +14,14 @@
 ## Programa
 
 1. Introducción al desarrollo web
+
 	a. HTML, CSS y Markdown
 	b. Git y Github
 	c. Gist y Bl.ocks
 	d. Javascript y jQuery
 
 2. Introducción al webmapping
+
 	a. Los mapas en la web
 	b. Leaflet.js
 	c. CARTO.js
