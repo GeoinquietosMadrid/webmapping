@@ -14,6 +14,7 @@
 ## Programa
 
 1. Introducción al desarrollo web
+
 * HTML, CSS y Markdown
 * Git y Github
 * Gist y Bl.ocks
