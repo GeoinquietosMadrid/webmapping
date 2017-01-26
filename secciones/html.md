@@ -23,8 +23,8 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 
 #### Texto
 
-* Negritas: \*\*hola\*\* se verá como **hola**
-* Itálicas: \*hola\* o \_hola\_ se verá como _hola_
+* Negritas: \*\*hola\*\* ó \_\_hola\_\_ se verá como **hola**
+* Itálicas: \*hola\* ó \_hola\_ se verá como _hola_
 * Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com)
 
 #### Citas
@@ -34,6 +34,8 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 #### Listas
 
 #### Imágenes
+
+![markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png)
 
 #### Código
 
