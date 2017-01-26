@@ -25,7 +25,7 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 
 * Negritas: \*\*hola\*\* ó \_\_hola\_\_ se verá como **hola**
 * Itálicas: \*hola\* ó \_hola\_ se verá como _hola_
-* Links: \[link to GitHub!\](\http://github.com) se verá como [link to GitHub!](http://github.com)
+* Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com)
 
 #### Citas
 
@@ -37,9 +37,9 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 
 Los encabezados empiezan con `#`. Cuantos menos añadas más importante en jerarquía.
 
-##### Ejemplo con 5#
+##### Ejemplo con 5 \#
 
-###### Ejemplo con 6#
+###### Ejemplo con 6 \#
 
 #### Listas
 
