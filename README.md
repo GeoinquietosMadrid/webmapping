@@ -13,16 +13,19 @@
 
 ## Programa
 
-1. Introducción al desarrollo web
+0. Introducción a GeoInquietos Madrid
+
+1. Los mapas en la web
+
+2. Introducción al desarrollo web
 
 * HTML, CSS y Markdown
 * Git y Github
 * Gist y Bl.ocks
 * Javascript y jQuery
 
-2. Introducción al webmapping
+3. Introducción al webmapping
 
-* Los mapas en la web
 * Leaflet.js
 * CARTO.js
 * Ejercicio práctico
