@@ -23,9 +23,9 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 
 #### Texto
 
-* Negritas: \**hola\** se verá como **hola**.
+* Negritas: \*\*hola\*\* se verá como **hola**.
 * Itálicas: \*hola\* o \_hola\_ se verá como _hola_.
-* Links: \[link to GitHub!\](http://github.com) se verá como [link to Google!](http://github.com).
+* Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com).
 
 #### Citas
 
