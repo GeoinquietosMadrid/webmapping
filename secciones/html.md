@@ -37,9 +37,9 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 
 Los encabezados empiezan con `#`. Cuantos menos añadas más importante en jerarquía.
 
-##### Ejemplo con 5 \#
+##### Ejemplo con 5 almohadillas
 
-###### Ejemplo con 6 \#
+###### Ejemplo con 6 almohadillas
 
 #### Listas
 
