@@ -25,7 +25,7 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 
 * Negritas: \*\*hola\*\* ó \_\_hola\_\_ se verá como **hola**
 * Itálicas: \*hola\* ó \_hola\_ se verá como _hola_
-* Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com)
+* Links: \[link to GitHub!\](\http://github.com) se verá como [link to GitHub!](http://github.com)
 
 #### Citas
 
@@ -36,6 +36,10 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 #### Encabezados
 
 Los encabezados empiezan con `#`. Cuantos menos añadas más importante en jerarquía.
+
+##### Ejemplo con 5#
+
+###### Ejemplo con 6#
 
 #### Listas
 
@@ -60,15 +64,15 @@ Puedes combinar listas sin orden y ordenadas.
 
 #### Imágenes
 
-Markdown permite añadir imágenes siguiendo la misma sintáxis que links pero con un signo de exclamación delante:
+Markdown permite añadir imágenes siguiendo la misma sintáxis que links pero con un signo de exclamación delante `!`:
 
 ![markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png)
 
 #### Código
 
-Por último puedes añadir líneas de código entre simples comillas \` o triples comillas \`\`\` si es un párrafo. Para especificar el lenguaje de programación, es necesario añadirlo después de las primeras comillas:
+Por último puedes añadir líneas de código entre simples comillas \` ó triples comillas \`\`\` si es un bloque. Para especificar el lenguaje de programación, es necesario añadirlo después de las primeras comillas:
 
-Esto es un ejemplo de código en línea `UPDATE`.
+Esto es un ejemplo de código en línea `UPDATE` y el siguiente ejemplo es un bloque de código en lenguaje SQL:
 
 ```sql
 UPDATE
