@@ -17,15 +17,15 @@ Puedes usar Markdown en la mayoría de sitios en GitHub:
 * Gists
 * READMEs
 * Comentarios en Issues y Pull Requests
-* Archivos con la extensión `.md` o `.markdown`.
+* Archivos con la extensión `.md` o `.markdown`
 
 ### 3.3. Guía rápida
 
 #### Texto
 
-* Negritas: \*\*hola\*\* se verá como **hola**.
-* Itálicas: \*hola\* o \_hola\_ se verá como _hola_.
-* Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com).
+* Negritas: \*\*hola\*\* se verá como **hola**
+* Itálicas: \*hola\* o \_hola\_ se verá como _hola_
+* Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com)
 
 #### Citas
 
