@@ -66,7 +66,7 @@ Markdown permite añadir imágenes siguiendo la misma sintáxis que links pero c
 
 #### Código
 
-Por último puedes añadir líneas de código entre simples comillas `\`\`` o triples comillas `\`\`\`` si es un párrafo. Para especificar el lenguaje de programación, es necesario añadirlo después de las primeras comillas:
+Por último puedes añadir líneas de código entre simples comillas \` o triples comillas \`\`\` si es un párrafo. Para especificar el lenguaje de programación, es necesario añadirlo después de las primeras comillas:
 
 Esto es un ejemplo de código en línea `UPDATE`.
 
