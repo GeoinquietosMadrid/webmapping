@@ -1,5 +1,7 @@
 # Programación GIS: Introducción a Webmapping
 
+![img]()
+
 ## Detalles
 
 * Contenido: materiales para el taller de "Programación GIS: Introducción a Webmapping".
@@ -19,14 +21,14 @@
 
 3. Introducción al desarrollo web
 
-	* HTML, CSS y Markdown
-	* Git y Github
-	* Gist y Bl.ocks
-	* Javascript y jQuery
+	* [HTML, CSS y Markdown]()
+	* [Git y Github]()
+	* [Gist y Bl.ocks]()
+	* [Javascript y jQuery]()
 
 4. Introducción al webmapping
 
-	* Leaflet.js
-	* CARTO.js
-	* Ejercicio práctico
+	* [Leaflet.js]()
+	* [CARTO.js]()
+	* [Ejercicio práctico]()
   
