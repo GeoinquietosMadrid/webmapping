@@ -1,6 +1,6 @@
 # Programación GIS: Introducción a Webmapping
 
-![img](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/webmapping.png)
+![img](img/webmapping.png)
 
 ## Detalles
 
@@ -21,14 +21,14 @@
 
 3. Introducción al desarrollo web
 
-	* [HTML, CSS y Markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/html.md)
-	* [Git y Github](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/git.md)
-	* [Gist y Bl.ocks](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/gist.md)
+	* [HTML, CSS y Markdown](secciones/html.md)
+	* [Git y Github](secciones/git.md)
+	* [Gist y Bl.ocks](secciones/gist.md)
 	* [Javascript y jQuery](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/javascript.md)
 
 4. Introducción al webmapping
 
-	* [Leaflet.js](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/leaflet.md)
-	* [CARTO.js](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/carto.md)
-	* [Ejercicio práctico](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/project.md)
+	* [Leaflet.js](secciones/leaflet.md)
+	* [CARTO.js](secciones/carto.md)
+	* [Ejercicio práctico](secciones/project.md)
   
