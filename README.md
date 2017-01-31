@@ -24,7 +24,7 @@
 	* [HTML, CSS y Markdown](secciones/html.md)
 	* [Git y Github](secciones/git.md)
 	* [Gist y Bl.ocks](secciones/gist.md)
-	* [Javascript y jQuery](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/javascript.md)
+	* [Javascript y jQuery](secciones/javascript.md)
 
 4. Introducción al webmapping
 
