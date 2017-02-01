@@ -194,7 +194,7 @@ A jQuery statement typically starts with the dollar sign (`$`) and ends with a s
 </html>
 ```
 
-In the above example we've performed a simple jQuery operation by changing the color of the heading i.e. the <h1> element using the jQuery element selector and `css()` method when the document is ready which is known as document ready event. We'll learn about jQuery selectors, events and methods in upcoming chapters.
+In the above example we've performed a simple jQuery operation by changing the color of the heading i.e. the `<h1>` element using the jQuery element selector and `css()` method when the document is ready which is known as document ready event. We'll learn about jQuery selectors, events and methods in upcoming chapters.
 
 ## 3. References
 
