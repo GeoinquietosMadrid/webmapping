@@ -21,14 +21,17 @@
 
 3. Introduction to Web Development
 
-	* [HTML, CSS & Markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/html.md)
-	* [Git & Github](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/git.md)
-	* [Gist & Bl.ocks](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/gist.md)
-	* [Javascript & jQuery](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/javascript.md)
+	* [HTML, CSS & Markdown](secciones/html.md)
+	* [Javascript & jQuery](secciones/javascript.md)
+	* [Exercise 1](secciones/exercise1.md)
+	* [Git & Github](secciones/git.md)
+	* [Gist & Bl.ocks](secciones/gist.md)
+	* [Exercise 2](secciones/exercise2.md)
+
 
 4. Introducción al webmapping
 
-	* [Leaflet.js](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/leaflet.md)
-	* [CARTO.js](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/carto.md)
-	* [Exercise](https://github.com/GeoinquietosMadrid/webmapping/blob/master/secciones/project.md)
+	* [Leaflet.js](secciones/leaflet.md)
+	* [CARTO.js](secciones/carto.md)
+	* [Exercise](secciones/project.md)
   
