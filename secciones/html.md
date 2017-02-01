@@ -1,4 +1,4 @@
-# HTML, CSS y Markdown
+# HTML, CSS & Markdown
 
 ## 1. HTML
 
@@ -6,79 +6,86 @@
 
 ## 3. Markdown
 
-### 3.1. ¿Qué es Markdown?
+### 3.1. What is Markdown?
 
-[Markdown](http://daringfireball.net/projects/markdown/) es un lenguaje que permite convertir texto en HTML. Gracias a él puedes controlar el formato de texto, crear listas, añadir imágenes usando texto convencional junto con un número reducido de carácteres no alfabéticos como `#` o `*`.
+[Markdown](http://daringfireball.net/projects/markdown/) is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like `#` or `*`.
 
-### 3.2. ¿Dónde utilizar Markdown?
-
-Puedes usar Markdown en la mayoría de sitios en GitHub:
+You can use Markdown most places around GitHub:
 
 * Gists
 * READMEs
-* Comentarios en Issues y Pull Requests
-* Archivos con la extensión `.md` o `.markdown`
+* Comments in Issues and Pull Requests
+* Files with the `.md` or `.markdown` extension
 
-### 3.3. Guía rápida
+### 3.2. Syntax Guide
 
-#### Texto
+#### Text
 
-* Negritas: \*\*hola\*\* ó \_\_hola\_\_ se verá como **hola**
-* Itálicas: \*hola\* ó \_hola\_ se verá como _hola_
-* Links: \[link to GitHub!\](http://github.com) se verá como [link to GitHub!](http://github.com)
+* Bold: \*\*hello\*\* or \_\hello\_\_ will be displayed as **hello*
+* Italiks: \*hello\* ó \hello\_ will be displayed as _hello_
+* Links: \[link to GitHub!\](http://github.com) will be displayed as [link to GitHub!](http://github.com)
 
-#### Citas
+#### Quotes
 
-\> Esto es una cita.
+\> This is a quote.
 
-> Esto es una cita.
+> This is a quote.
 
-#### Encabezados
+#### Headers
 
-Los encabezados empiezan con `#`. Cuantos menos añadas más importante en jerarquía.
+Headers start with `#`.
 
-##### Ejemplo con 5 almohadillas
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
 
-###### Ejemplo con 6 almohadillas
+#### Lists
 
-#### Listas
+Sometimes you want numbered lists (`1.`, `2.`, etc.):
 
-Las listas sin orden usan `*` para cada elemento:
+1. One
+2. Two
+3. Three
 
-* Primer elemento
-* Segundo elemento
+Sometimes you want bullet points (`*`):
 
-Puedes anidar varias listas:
+* Start a line with a star
+* Profit!
 
-* Primer elemento de la lista
-  * Primer elemento de la sublista
-  * Segundo elemento de la sublista
-* Segundo elemento de la lista
+Alternatively (`-`),
 
-Las listas ordenadas usan números seguidas de un punto:
+- Dashes work just as well
+- And if you have sub points, put two spaces before the dash or star:
+  - Like this
+  - And this
 
-1. Primer elemento
-2. Segundo elemento
+#### Images
 
-Puedes combinar listas sin orden y ordenadas.
-
-#### Imágenes
-
-Markdown permite añadir imágenes siguiendo la misma sintáxis que links pero con un signo de exclamación delante `!`:
+If you want to embed images, use the same syntax as link but with an exclamation sign before (`!`):
 
 ![markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png)
 
-#### Código
+#### Code
 
-Por último puedes añadir líneas de código entre simples comillas \` ó triples comillas \`\`\` si es un bloque. Para especificar el lenguaje de programación, es necesario añadirlo después de las primeras comillas:
+There are many different ways to style code with GitHub's markdown. If you have inline code blocks, wrap them in backticks: `var example = true`.  If you've got a longer block of code, you can indent with four spaces:
 
-Esto es un ejemplo de código en línea `UPDATE` y el siguiente ejemplo es un bloque de código en lenguaje SQL:
+    if (isAwesome){
+      return true
+    }
 
-```sql
-UPDATE
-  table_name
-SET
-  double_field = 2 * field
+GitHub also supports something called code fencing, which allows for multiple lines without indentation:
+
+```
+if (isAwesome){
+  return true
+}
 ```
 
+And if you'd like to use syntax highlighting, include the language:
+
+```javascript
+if (isAwesome){
+  return true
+}
+```
 
