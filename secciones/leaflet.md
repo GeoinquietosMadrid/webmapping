@@ -94,10 +94,30 @@ This adds a marker as a new layer to the map. It expects at least an array with 
 
 ##### Check a live version of this basic example [here](http://plnkr.co/edit/cDszbYcgUZexjCPzoSmT?p=preview). Feel free to play with it!
 
-## Adding a GeoJSON layer
+## Adding a [GeoJSON](http://leafletjs.com/reference-1.0.3.html#geojson) layer
 
-Another possibility for adding data to a Leaflet map would be loading a set of geometries (and their properties)
-Use this [Spanish cities dataset](../src/populated_places.geojson)
+Another possibility for adding data to a Leaflet map would be loading a set of geometries (and their properties) using a geoJSON file. 
+We're going to use this [Spanish cities dataset](../src/populated_places.js). 
+
+First thing we need to do is storing the geoJSON features in a variable (on `populated_places.js` file) and load the file on the HTML's `<head>` section:
+
+```html
+<script src="populated_places.js"></script>
+```
+
+After that, adding the features as a vector layer in Leaflet is quite easy: 
+
+```javascript
+L.geoJSON(populatedPlaces, {}).addTo(map);  
+```
+
+Note that we're just referencing the variable name, and not passing any other option to `geoJSON()` method. We'll come back to that later. 
+
+This approach has a very important drawback. Vector layers in Leaflet use a lot of memory on the browser, which leads to slow map performance depending on the computer and the amount of features to be loaded. 
+
+This really wouldn't work for a map with thousands of features, but is a nice and easy approach for a map in the range of 100-200 features. 
+
+
 
 ## Styling a GeoJSON layer
 Bubbles map
