@@ -79,6 +79,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 ### [Marker](http://leafletjs.com/reference-1.0.3.html#marker)
 
+
 Adding a single marker to a Leaflet map is as easy as: 
 
 ```javascript
@@ -94,6 +95,8 @@ This adds a marker as a new layer to the map. It expects at least an array with 
 ##### Check a live version of this basic example [here](http://plnkr.co/edit/cDszbYcgUZexjCPzoSmT?p=preview). Feel free to play with it!
 
 ## Adding a GeoJSON layer
+
+Another possibility for adding data to a Leaflet map would be loading a set of geometries (and their properties)
 Use this [Spanish cities dataset](../src/populated_places.geojson)
 
 ## Styling a GeoJSON layer
