@@ -127,37 +127,64 @@ Leaflet uses functions that return certain values or objects in order to set lay
 
 * `pointToLayer` option defines the way in which each point geometry is going to be represented on the map. Default is returning a `L.marker` object, but we can set different options for different symbolizers, such as: 
 
-  ```javascript
-  pointToLayer: function(feature,latlng){
-      return L.circleMarker(latlng)
-  }
-  ```
+    ```javascript
+    pointToLayer: function(feature,latlng){
+        return L.circleMarker(latlng)
+    }
+    ```
 
-  Note the function expects two arguments: 
+    Note the function expects two arguments: 
 
-  * `feature` makes reference to each point feature on the layer.
-  * `latlng` is a `L.latLng` object that contains the geographic position of the feature. 
+    * `feature` makes reference to each point feature on the layer.
+    * `latlng` is a `L.latLng` object that contains the geographic position of the feature. 
 
-  Those arguments could be used inside the function to play with them as you want. They could be called however you like, but bear in mind the first one will always make reference to the feature, and the second to the `L.latLng` object. 
+    Those arguments could be used inside the function to play with them as you want. They could be called however you like, but bear in mind the first one will always make reference to the feature, and the second to the `L.latLng` object. 
 
 * `style` option is used to set the styling rules for the layer. It only expects a `feature` argument
 
-  ```javascript
-  style: function(feature){
+    ```javascript
+    style: function(feature){
         return {
             "fillColor":"#F00",
             "fillOpacity":0.6,
             "stroke":false,
             "radius":feature.properties.pop_max/100000
         }
-  }
-  ```
+    }
+    ```
 
-  In this case, the function only returns an object with a key/value configuration. 
+    In this case, the function only returns an object with a key/value configuration. 
 
-  Note that we can use the `feature` variable inside the function to make reference to the feature's properties and use them to set style rules. 
+    Note that we can use the `feature` variable inside the function to make reference to the feature's properties and use them to set style rules. 
 
 * There are other options that add functionality to the layer, we'll see some of them later but check [this link](http://leafletjs.com/reference-1.0.3.html#geojson) for the complete reference.  
 
 ## Adding a Pop-up
-Show some info for each feature
+
+We could add a simple, static Popup that shows the same content for every feature in the map, using the `bindPopup()` method we saw before. 
+
+However, in order to create dynamic Popups that shows information stored as feature properties, we need a different approach. 
+
+We'll do so by passing another option to `L.geoJSON` layer declaration: 
+
+```javascript
+onEachFeature: function(feature,layer){
+    layer.bindPopup(
+        '<b>Name:</b> '+feature.properties.name+'</br>'+
+        '<b>Population:</b> '+feature.properties.pop_max
+        )
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

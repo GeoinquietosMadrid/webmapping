@@ -38,6 +38,21 @@
 						"stroke":false,
 						"radius":feature.properties.pop_max/100000
 					}
+				},
+				onEachFeature: function(feature,layer){
+					layer.bindPopup(
+						'<h2>'+feature.properties.name+'</h2>'+
+						'<h3>'+feature.properties.featurecla+'</h3>'+
+						'<b>Population:</b> '+feature.properties.pop_max
+						)
+				},
+				filter: function (feature){
+					if (feature.properties.pop_max < 1000000){
+						return false
+					}
+					else {
+						return true
+					}
 				}
 			}).addTo(map);	
     	</script>
