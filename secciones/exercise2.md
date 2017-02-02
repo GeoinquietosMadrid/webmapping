@@ -12,5 +12,5 @@ Using the `index.html` and `README.md` files created in the [first exercise](exe
 8. Copy the text from the `README.md` file from the first exercise.
 9. Click on "Create public gist".
 
-Solution: [gist](https://gist.github.com/ramiroaznar/96c8154b310cad8534b6bf6438fc9b0b) and [bl.cok](https://bl.ocks.org/ramiroaznar/96c8154b310cad8534b6bf6438fc9b0b).
+Solution: [gist](https://gist.github.com/ramiroaznar/96c8154b310cad8534b6bf6438fc9b0b) and [bl.ock](https://bl.ocks.org/ramiroaznar/96c8154b310cad8534b6bf6438fc9b0b).
 
