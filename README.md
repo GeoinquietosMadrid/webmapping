@@ -1,33 +1,39 @@
-# Programación GIS: Introducción a Webmapping
+# GIS Programming: Introduction to Webmapping
 
 ![img](img/webmapping.png)
 
-## Detalles
+## Details
 
-* Contenido: materiales para el taller de "Programación GIS: Introducción a Webmapping".
-* Fecha y hora: sábado 4 de febrero de 2017 a las 10h.
-* Lugar: Medialab-Prado Madrid.
-* Links: [meetup](https://www.meetup.com/es-ES/Geoinquietos-MAD/events/236640373/) y [web de Medialab-Prado](http://medialab-prado.es/article/programacion-gis-i-webmapping).
-* Profesores:
-  * Ramiro Aznar, Solutions Engineer en CARTO.
-  * Ernesto Martínez, Support Engineer en CARTO.
 
-## Programa
+* Date & hour: February 4th 2017, 10-14h.
+* Location: Medialab-Prado Madrid.
+* Links: [meetup](https://www.meetup.com/es-ES/Geoinquietos-MAD/events/236640373/) & [Medialab-Prado web](http://medialab-prado.es/article/programacion-gis-i-webmapping).
+* Instructors:
+  * Ramiro Aznar, Solutions Engineer at CARTO.
+  * Ernesto Martínez, Support Engineer at CARTO.
 
-1. Introducción a GeoInquietos Madrid
 
-2. Los mapas en la web
+## Index
 
-3. Introducción al desarrollo web
+1. Introduction to GeoInquietos Madrid
+	* [GeoInquietos Madrid, One year of talks, workshops & mapathons](https://docs.google.com/presentation/d/1vooAgHK7-TDK6oLRKItx9d-pxvAtkc4CXdaEs2E1c1s/edit?usp=sharing)
 
-	* [HTML, CSS y Markdown](secciones/html.md)
-	* [Git y Github](secciones/git.md)
-	* [Gist y Bl.ocks](secciones/gist.md)
-	* [Javascript y jQuery](secciones/javascript.md)
+2. Maps on the web
+	* [Maps on the web](https://docs.google.com/presentation/d/11OvKr9PNxIurWCe3Q9ahy92YQyJ4K0vRtNWQY8xbnq0/edit?usp=sharing)
+
+3. Introduction to Web Development
+
+	* [HTML, CSS & Markdown](secciones/html.md)
+	* [JavaScript & jQuery](secciones/javascript.md)
+	* [Exercise 1](secciones/exercise1.md)
+	* [Git & Github](secciones/git.md)
+	* [Gists & Bl.ocks](secciones/gist.md)
+	* [Exercise 2](secciones/exercise2.md)
+
 
 4. Introducción al webmapping
 
 	* [Leaflet.js](secciones/leaflet.md)
 	* [CARTO.js](secciones/carto.md)
-	* [Ejercicio práctico](secciones/project.md)
+
   
