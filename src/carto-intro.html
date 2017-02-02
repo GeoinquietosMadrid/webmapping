@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geoinquietos webmapping | CARTO</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="http://carto.com/assets/favicon.ico" />
+
+    <style>
+        html, body, #map {
+          height: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        #map{position:relative;}
+        #bar{z-index: 2; position:absolute; top:0; right:0; margin:4px;}
+    </style>
+
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <!-- 
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    -->
+</head>
+<body>
+
+<!-- 
+    <script type="infowindow/html" id="infowindow_template">
+        <div class="cartodb-popup v2">
+            <a href="#close" class="cartodb-popup-close-button close">x</a>
+            <div class="cartodb-popup-content-wrapper">
+                <div class="cartodb-popup-content">
+                    <h1>cartodb_id</h1>
+                    <p>{{content.data.cartodb_id}}</p>
+                </div>
+            </div>
+            <div class="cartodb-popup-tip-container"></div>
+        </div>
+    </script>
+-->
+      
+    <script type="text/html" id="cartoCSS">
+
+        /** simple visualization */
+
+        #layer{
+            marker-fill-opacity: 0.9;
+            marker-line-color: #FFF;
+            marker-line-width: 1;
+            marker-line-opacity: 1;
+            marker-placement: point;
+            marker-type: ellipse;
+            marker-width: 10;
+            marker-fill: #FF6600;
+            marker-allow-overlap: true;
+        }
+
+    </script>  
+
+
+    <div id="map"></div>
+    <div id="bar">
+        <button id="b1">action1</button>
+        <button id="b2">action2</button>
+    </div>
+
+    <!-- include cartodb.js library -->
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <!--
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script> 
+    -->
+     
+
+    <!-- Drop your code between the script tags below! -->
+    <script>
+
+        var layerSource={
+            user_name: 'carto-workshops',
+            type: 'cartodb',
+            sublayers: [{
+                sql: 'SELECT * FROM ne_10m_populated_places_simple',
+                cartocss: $('#cartoCSS').html(),
+                interactivity: 'cartodb_id'
+            }]
+        }
+
+        /////////createLayer section////////////  
+
+        var map= new L.Map('map', {
+            zoom:3,
+            center:[12,0]
+        });
+
+        L.tileLayer('https://cartodb-basemaps-d.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        })
+        .addTo(map,0);
+
+        cartodb.createLayer(map, layerSource,{
+         	//layer options
+        })
+        .addTo(map)
+        .done(function(layer){
+            //do stuff
+        });
+
+        $('#b1').click(function() {
+            //do stuff
+            console.log("action1 fired");
+        });
+
+        $('#b2').click(function (){
+            //do stuff
+            console.log("action2 fired");
+        });
+
+    </script>
+
+</body>
+</html>

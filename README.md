@@ -10,7 +10,6 @@
 * Links: [meetup](https://www.meetup.com/es-ES/Geoinquietos-MAD/events/236640373/) y [web de Medialab-Prado](http://medialab-prado.es/article/programacion-gis-i-webmapping).
 * Profesores:
   * Ramiro Aznar, Solutions Engineer en CARTO.
-  * María Checa, Front-End Developer en CARTO.
   * Ernesto Martínez, Support Engineer en CARTO.
 
 ## Programa
