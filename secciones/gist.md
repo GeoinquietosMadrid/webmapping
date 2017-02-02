@@ -16,11 +16,12 @@ If you are signed in to GitHub when you create a gist, the gist will be associat
 
 1. Sign in to GitHub.
 2. Navigate to your [gist home page](https://gist.github.com/).
-3. Gist name descriptionType an optional description and name for your gist.
+3. Type an optional description and name for your gist.
 4. Type the text of your gist into the gist text box. Add as many files as you need.
 5. Do one of the following:
 
   a. To create a public, searchable gist, click **Create public gist**.
+
   b. Gist create buttonTo create a secret gist that is not searchable by other users, click **Create secret Gist**.
 
 ## 2. Bl.ocks
