@@ -7,6 +7,7 @@
 - Adding a GeoJSON layer
 - Styling a GeoJSON layer
 - Adding a Pop-up
+- Filtering the layer
 
 <!-- /MarkdownTOC -->
 
@@ -125,7 +126,7 @@ Let's dig a bit more on how to work with geoJSON layers, with some cartographic 
 
 Leaflet uses functions that return certain values or objects in order to set layer options. For example:
 
-* `pointToLayer` option defines the way in which each point geometry is going to be represented on the map. Default is returning a `L.marker` object, but we can set different options for different symbolizers, such as: 
+* `pointToLayer` option defines the way in which each point geometry is going to be represented on the map. By default it returns a `L.marker` object, but we can set different options for different symbolizers, such as: 
 
     ```javascript
     pointToLayer: function(feature,latlng){
@@ -153,7 +154,7 @@ Leaflet uses functions that return certain values or objects in order to set lay
     }
     ```
 
-    In this case, the function only returns an object with a key/value configuration. 
+    In this case, the function returns an object with a key/value configuration. It applies the same style to every feature, but we could also add some conditional structure to create a choropleth map. 
 
     Note that we can use the `feature` variable inside the function to make reference to the feature's properties and use them to set style rules. 
 
@@ -163,25 +164,42 @@ Leaflet uses functions that return certain values or objects in order to set lay
 
 We could add a simple, static Popup that shows the same content for every feature in the map, using the `bindPopup()` method we saw before. 
 
-However, in order to create dynamic Popups that shows information stored as feature properties, we need a different approach. 
+However, in order to create dynamic Popups that show information stored as feature properties, we need a different approach. 
 
 We'll do so by passing another option to `L.geoJSON` layer declaration: 
 
 ```javascript
 onEachFeature: function(feature,layer){
     layer.bindPopup(
-        '<b>Name:</b> '+feature.properties.name+'</br>'+
+        '<h2>'+feature.properties.name+'</h2>'+
         '<b>Population:</b> '+feature.properties.pop_max
         )
 }
 ```
 
+This will render the HTML code passed as argument to the function, but is also able to get values from the feature properties. 
 
 
+## Filtering the layer
 
+We could also apply a filter based on each feature properties, the `filter` options iterate over the geojson layer and applies the function we have defined to return `true` or `false` depending on whether a feature should be rendered or not. 
 
+```javascript
+filter: function(feature){
+    if (feature.properties.pop_max < 1000000){
+        return false
+    }
+    else {
+        return true
+    }
+}
+```
 
+The filter above will only show cities with more than 1M inhabitants. 
 
+##### Play with the full example [here](http://plnkr.co/edit/N453u2wW6jSNCHks37OY?p=preview)!
+
+![mapshot](../img/leafletmap.png)
 
 
 
