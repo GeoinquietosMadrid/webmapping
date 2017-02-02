@@ -1,4 +1,4 @@
-# Create your gist and bl.ock
+# Create your first gist and bl.ock
 
 Using the `index.html` and `README.md` files created in the [first exercise](exercise.md), we will create a gist and then we will be able to launch it as a bl.ock. 
 
