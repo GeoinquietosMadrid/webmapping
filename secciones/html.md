@@ -194,7 +194,7 @@ You can use Markdown most places around GitHub:
 #### Text
 
 * Bold: \*\*hello\*\* or \_\hello\_\_ will be displayed as **hello*
-* Italiks: \*hello\* ó \hello\_ will be displayed as _hello_
+* Italics: \*hello\* ó \hello\_ will be displayed as _hello_
 * Links: \[link to GitHub!\](http://github.com) will be displayed as [link to GitHub!](http://github.com)
 
 #### Quotes
