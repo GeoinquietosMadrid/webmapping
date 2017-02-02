@@ -115,12 +115,49 @@ Note that we're just referencing the variable name, and not passing any other op
 
 This approach has a very important drawback. Vector layers in Leaflet use a lot of memory on the browser, which leads to slow map performance depending on the computer and the amount of features to be loaded. 
 
-This really wouldn't work for a map with thousands of features, but is a nice and easy approach for a map in the range of 100-200 features. 
+This really wouldn't work for a map with thousands of features, but is a nice and easy approach for a map in the range of a few hundreds features. 
 
 
 
 ## Styling a GeoJSON layer
-Bubbles map
+
+Let's dig a bit more on how to work with geoJSON layers, with some cartographic enhancements. 
+
+Leaflet uses functions that return certain values or objects in order to set layer options. For example:
+
+* `pointToLayer` option defines the way in which each point geometry is going to be represented on the map. Default is returning a `L.marker` object, but we can set different options for different symbolizers, such as: 
+
+  ```javascript
+  pointToLayer: function(feature,latlng){
+      return L.circleMarker(latlng)
+  }
+  ```
+
+  Note the function expects two arguments: 
+
+  * `feature` makes reference to each point feature on the layer.
+  * `latlng` is a `L.latLng` object that contains the geographic position of the feature. 
+
+  Those arguments could be used inside the function to play with them as you want. They could be called however you like, but bear in mind the first one will always make reference to the feature, and the second to the `L.latLng` object. 
+
+* `style` option is used to set the styling rules for the layer. It only expects a `feature` argument
+
+  ```javascript
+  style: function(feature){
+        return {
+            "fillColor":"#F00",
+            "fillOpacity":0.6,
+            "stroke":false,
+            "radius":feature.properties.pop_max/100000
+        }
+  }
+  ```
+
+  In this case, the function only returns an object with a key/value configuration. 
+
+  Note that we can use the `feature` variable inside the function to make reference to the feature's properties and use them to set style rules. 
+
+* There are other options that add functionality to the layer, we'll see some of them later but check [this link](http://leafletjs.com/reference-1.0.3.html#geojson) for the complete reference.  
 
 ## Adding a Pop-up
 Show some info for each feature
