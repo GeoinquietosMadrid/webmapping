@@ -171,7 +171,15 @@ You can download the last jQuery version from their website, or you can add it f
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 ```
 
-### 2.2. Standard jQuery Syntax
+### 2.2. jQuery Basics
+
+The jQuery library defines a sigle gobal function **`jQuery()`**. This function is so frequently used that the library also defines the global symbol **`$`** as a shortcut for it. This sigle global function with two names is the central query function for jQuery. Here, for example, is how we ask for the set of all `<div>` tags in a document:
+
+```javascript
+var divs = $("div");
+```
+
+### 2.3. Standard jQuery Syntax
 
 A jQuery statement typically starts with the dollar sign (`$`) and ends with a semicolon (`;`). In jQuery, the dollar sign (`$`) is just an alias for jQuery. Let's consider the following example code which demonstrates the most basic statement of the jQuery.
 
@@ -201,32 +209,4 @@ In the above example we've performed a simple jQuery operation by changing the c
 * [Mozilla Developer Network](https://developer.mozilla.org/)
 * [Learn jQuery](https://learn.jquery.com/)
 * [Tutorial Republic](http://www.tutorialrepublic.com/jquery-tutorial/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* [jQuery Pocket Reference](https://www.amazon.com/jQuery-Pocket-Reference-Read-Learn/dp/1449397220)
