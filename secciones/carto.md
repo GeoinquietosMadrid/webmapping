@@ -280,7 +280,7 @@ In order to create a Popup that shows data from the table, we need the following
 cdb.vis.Vis.addInfowindow(
     map, 
     layer.getSubLayer(0), 
-    ['cartodb_id', 'name', 'pop_max'],
+    ['cartodb_id', 'name', 'pop_max', 'featurecla'],
     {infowindowTemplate: $('#popup_template').html()}
 );
 ```
@@ -294,7 +294,7 @@ var layerSource={
     sublayers: [{
         sql: 'SELECT * FROM ne_10m_populated_places_simple',
         cartocss: $('#cartoCSS').html(),
-        interactivity: 'cartodb_id, name, pop_max'
+        interactivity: 'cartodb_id, name, pop_max, featurecla'
     }]
 }
 ```
@@ -306,14 +306,13 @@ This is the where we set the popup content, using [Mustache](https://mustache.gi
 ```html
 <div class="cartodb-popup-content">
     <h1>{{content.data.name}}</h1>
+    <h3>{{content.data.featurecla}}</h3>
     <b>Population: </b>
     {{content.data.pop_max}}
 </div>
 ```
 
-## LIVE EXAMPLE
-
-##### Feel free to play with it [here](http://plnkr.co/edit/U2IkgC4BbN3FkOJnaj1u?p=preview)
+## [LIVE EXAMPLE](http://plnkr.co/edit/U2IkgC4BbN3FkOJnaj1u?p=preview)
 
 
 

@@ -31,7 +31,7 @@
 	* [Exercise 2](secciones/exercise2.md)
 
 
-4. Introducción al webmapping
+4. Introduction to webmapping libraries
 
 	* [Leaflet.js](secciones/leaflet.md)
 	* [CARTO.js](secciones/carto.md)
