@@ -41,18 +41,37 @@
       
     <script type="text/html" id="cartoCSS">
 
-        /** simple visualization */
-
         #layer{
-            marker-fill-opacity: 0.9;
-            marker-line-color: #FFF;
-            marker-line-width: 1;
-            marker-line-opacity: 1;
+            marker-fill-opacity: 0.6;
+            marker-line-color: #000;
+            marker-line-width: 0.3;
+            marker-line-opacity: 0.5;
             marker-placement: point;
             marker-type: ellipse;
-            marker-width: 10;
-            marker-fill: #FF6600;
             marker-allow-overlap: true;
+            marker-fill:#FF6600;
+            [featurecla='Admin-0 capital']{
+                marker-fill:#0099FF;
+            }
+            
+            marker-width:10;
+            [pop_max>1000000]{
+                marker-width:18;
+            }
+            [pop_max>5000000]{
+                marker-width:26;
+            }
+
+            [zoom>6]{
+                marker-width:30;
+                [pop_max>1000000]{
+                    marker-width:54;
+                }
+
+                [pop_max>5000000]{
+                    marker-width:78;
+                }
+            }
         }
 
     </script>  
@@ -87,8 +106,8 @@
         /////////createLayer section////////////  
 
         var map= new L.Map('map', {
-            zoom:3,
-            center:[12,0]
+            zoom:4,
+            center:[40,-4]
         });
 
         L.tileLayer('https://cartodb-basemaps-d.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
