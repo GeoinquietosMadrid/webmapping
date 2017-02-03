@@ -1,8 +1,9 @@
 # GIS Programming: Introduction to Webmapping
 
-![img](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/webmapping.png)
+![img](img/webmapping.png)
 
 ## Details
+
 
 * Date & hour: February 4th 2017, 10-14h.
 * Location: Medialab-Prado Madrid.
@@ -10,6 +11,7 @@
 * Instructors:
   * Ramiro Aznar, Solutions Engineer at CARTO.
   * Ernesto Martínez, Support Engineer at CARTO.
+
 
 ## Index
 
@@ -29,9 +31,9 @@
 	* [Exercise 2](secciones/exercise2.md)
 
 
-4. Introducción al webmapping
+4. Introduction to webmapping libraries
 
 	* [Leaflet.js](secciones/leaflet.md)
 	* [CARTO.js](secciones/carto.md)
-	* [Exercise](secciones/project.md)
+
   

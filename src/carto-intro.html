@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geoinquietos Madrid | CARTO</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="http://carto.com/assets/favicon.ico" />
+
+    <style>
+        html, body, #map {
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          position:relative;
+        }
+
+        #bar{
+            position:absolute;
+            z-index: 1;
+            top:0;
+            right:0;
+            margin: 4px;
+            padding: 4px;
+            background-color: rgba(255,255,255,0.9);
+            text-align:center;
+        }
+    </style>
+
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <!-- 
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    -->
+</head>
+<body>
+
+
+    <script type="infowindow/html" id="popup_template">
+        <div class="cartodb-popup v2">
+            <a href="#close" class="cartodb-popup-close-button close">x</a>
+            <div class="cartodb-popup-content-wrapper">
+                <div class="cartodb-popup-content">
+                    <h1>{{content.data.name}}</h1>
+                    <h3>{{content.data.featurecla}}</h3>
+                    <b>Population: </b>
+                    {{content.data.pop_max}}
+                </div>
+            </div>
+            <div class="cartodb-popup-tip-container"></div>
+        </div>
+    </script>
+
+      
+    <script type="text/html" id="cartoCSS">
+
+        #layer{
+            marker-fill-opacity: 0.6;
+            marker-line-color: #000;
+            marker-line-width: 0.3;
+            marker-line-opacity: 0.5;
+            marker-placement: point;
+            marker-type: ellipse;
+            marker-allow-overlap: true;
+            marker-fill:#FF6600;
+            [featurecla='Admin-0 capital']{
+                marker-fill:#0099FF;
+            }
+            
+            marker-width:10;
+            [pop_max>1000000]{
+                marker-width:18;
+            }
+            [pop_max>5000000]{
+                marker-width:26;
+            }
+
+            [zoom>6]{
+                marker-width:30;
+                [pop_max>1000000]{
+                    marker-width:54;
+                }
+
+                [pop_max>5000000]{
+                    marker-width:78;
+                }
+            }
+        }
+
+    </script>  
+
+
+    <div id="map"></div>
+    <div id="bar">
+         <button id="blue">blue</button>
+         <button id="green">green</button>
+         <button id="red">red</button>
+         <p>Population >= <input type ="text" id="pop_filter"/>
+         <button id="apply_filter">apply</button></p>
+    </div>
+
+    <!-- include cartodb.js library -->
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <!--
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script> 
+    -->
+     
+
+    <!-- Drop your code between the script tags below! -->
+    <script>
+
+        var layerSource={
+            user_name: 'carto-workshops',
+            type: 'cartodb',
+            sublayers: [{
+                sql: 'SELECT * FROM ne_10m_populated_places_simple',
+                cartocss: $('#cartoCSS').html(),
+                interactivity: 'cartodb_id, name, pop_max, featurecla'
+            }]
+        }
+
+        /////////createLayer section////////////  
+
+        var map= new L.Map('map', {
+            zoom:4,
+            center:[40,-4]
+        });
+
+        L.tileLayer('https://cartodb-basemaps-d.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        })
+        .addTo(map);
+
+        cartodb.createLayer(map, layerSource,{
+         	//layer options
+        })
+        .addTo(map)
+        .done(function(layer){
+            //do stuff
+            $('#blue').click(function() {
+                //do stuff
+                layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#00F;}')
+            });
+
+            $('#red').click(function (){
+                //do stuff
+                layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#F00;}')
+            });
+
+            $('#green').click(function (){
+                //do stuff
+                layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#0F0;}')
+            });
+
+            $('#apply_filter').click(function (){
+                //do stuff
+                var filter=$('#pop_filter').val();
+                layer.getSubLayer(0).setSQL('SELECT * FROM ne_10m_populated_places_simple WHERE pop_max >='+filter)
+            });
+
+            cdb.vis.Vis.addInfowindow(
+                map, 
+                layer.getSubLayer(0), 
+                ['cartodb_id', 'name', 'pop_max', 'featurecla'],
+                {infowindowTemplate: $('#popup_template').html()}
+            );
+        });
+
+
+    </script>
+
+</body>
+</html>
