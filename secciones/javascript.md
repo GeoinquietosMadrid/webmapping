@@ -181,7 +181,7 @@ var divs = $("div");
 
 ### 2.3. Standard jQuery Syntax
 
-A jQuery statement typically starts with the dollar sign (`$`) and ends with a semicolon (`;`). In jQuery, the dollar sign (`$`) is just an alias for jQuery. Let's consider the following example code which demonstrates the most basic statement of the jQuery.
+Let's consider the following example code which demonstrates the most basic statement of the jQuery.
 
 ```javascript
 <html>
