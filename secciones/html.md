@@ -196,8 +196,8 @@ You can follow this guide with a Markdown sandbox application such as [Dillinger
 #### Text
 
 * Bold: \*\*hello\*\* or \_\_hello\_\_ will be displayed as **hello**
-* Italics: \*hello\* ó \_hello\_ will be displayed as _hello_
-* Links: \[link to GitHub!\](http://github.com) will be displayed as [link to GitHub!](http://github.com)
+* Italics: \*hello\* or \_hello\_ will be displayed as _hello_
+* Links: `\[link to GitHub!\](http://github.com)` will be displayed as [link to GitHub!](http://github.com)
 
 #### Quotes
 
@@ -235,7 +235,7 @@ Alternatively (`-`),
 
 #### Images
 
-If you want to embed images, use the same syntax as link but with an exclamation sign before (`!`). So \!\[markdown\](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png) will be displayed as:
+If you want to embed images, use the same syntax as link but with an exclamation sign before (`!`). So `\!\[markdown\](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png)` will be displayed as:
 
 ![markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png)
 
