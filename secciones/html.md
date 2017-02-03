@@ -191,10 +191,12 @@ You can use Markdown most places around GitHub:
 
 ### 3.2. Syntax Guide
 
+You can follow this guide with a Markdown sandbox application such as [Dillinger](http://dillinger.io/) or [StackEdit](https://stackedit.io/editor).
+
 #### Text
 
-* Bold: \*\*hello\*\* or \_\hello\_\_ will be displayed as **hello*
-* Italics: \*hello\* ó \hello\_ will be displayed as _hello_
+* Bold: \*\*hello\*\* or \_\_hello\_\_ will be displayed as **hello**
+* Italics: \*hello\* ó \_hello\_ will be displayed as _hello_
 * Links: \[link to GitHub!\](http://github.com) will be displayed as [link to GitHub!](http://github.com)
 
 #### Quotes
@@ -233,19 +235,19 @@ Alternatively (`-`),
 
 #### Images
 
-If you want to embed images, use the same syntax as link but with an exclamation sign before (`!`):
+If you want to embed images, use the same syntax as link but with an exclamation sign before (`!`). So \!\[markdown\](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png) will be displayed as:
 
 ![markdown](https://github.com/GeoinquietosMadrid/webmapping/blob/master/img/markdown.png)
 
 #### Code
 
-There are many different ways to style code with GitHub's markdown. If you have inline code blocks, wrap them in backticks: `var example = true`.  If you've got a longer block of code, you can indent with four spaces:
+There are many different ways to style code with GitHub's markdown. If you have inline code blocks, wrap them in backticks (\`): `var example = true`.  If you've got a longer block of code, you can indent with four spaces:
 
     if (isAwesome){
       return true
     }
 
-GitHub also supports something called code fencing, which allows for multiple lines without indentation:
+GitHub also supports something called code fencing, which allows for multiple lines without indentation (\`\`\`):
 
 ```
 if (isAwesome){
@@ -253,7 +255,7 @@ if (isAwesome){
 }
 ```
 
-And if you'd like to use syntax highlighting, include the language:
+And if you'd like to use syntax highlighting, include the language (javascript, sql, css, python...):
 
 ```javascript
 if (isAwesome){
