@@ -7,6 +7,7 @@
 - Filtering a layer with CARTO
 - Changing a visualization on runtime
 - Popups with CARTO.js
+- LIVE EXAMPLE
 
 <!-- /MarkdownTOC -->
 
@@ -273,8 +274,46 @@ $('#apply_filter').click(function (){
 
 ## Popups with CARTO.js
 
+In order to create a Popup that shows data from the table, we need the following:
 
+```javascript
+cdb.vis.Vis.addInfowindow(
+    map, 
+    layer.getSubLayer(0), 
+    ['cartodb_id', 'name', 'pop_max'],
+    {infowindowTemplate: $('#popup_template').html()}
+);
+```
 
+Also, set the proper interactivity for the sublayer: 
+
+```javascript
+var layerSource={
+    user_name: 'carto-workshops',
+    type: 'cartodb',
+    sublayers: [{
+        sql: 'SELECT * FROM ne_10m_populated_places_simple',
+        cartocss: $('#cartoCSS').html(),
+        interactivity: 'cartodb_id, name, pop_max'
+    }]
+}
+```
+
+We're also using jQuery to get the `popup_template` element and pass it as a parameter for creating the Popup. 
+
+This is the where we set the popup content, using [Mustache](https://mustache.github.io/mustache.5.html) templates
+
+```html
+<div class="cartodb-popup-content">
+    <h1>{{content.data.name}}</h1>
+    <b>Population: </b>
+    {{content.data.pop_max}}
+</div>
+```
+
+## LIVE EXAMPLE
+
+##### Feel free to play with it [here](http://plnkr.co/edit/U2IkgC4BbN3FkOJnaj1u?p=preview)
 
 
 

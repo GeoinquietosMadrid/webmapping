@@ -13,13 +13,14 @@
           margin: 0;
           position:relative;
         }
-        
+
         #bar{
             position:absolute;
             z-index: 11;
             top:0;
             right:0;
             margin: 4px;
+            padding: 4px;
             background-color: rgba(255,255,255,0.9);
             text-align:center;
         }
@@ -32,20 +33,21 @@
 </head>
 <body>
 
-<!-- 
-    <script type="infowindow/html" id="infowindow_template">
+
+    <script type="infowindow/html" id="popup_template">
         <div class="cartodb-popup v2">
             <a href="#close" class="cartodb-popup-close-button close">x</a>
             <div class="cartodb-popup-content-wrapper">
                 <div class="cartodb-popup-content">
-                    <h1>cartodb_id</h1>
-                    <p>{{content.data.cartodb_id}}</p>
+                    <h1>{{content.data.name}}</h1>
+                    <b>Population: </b>
+                    {{content.data.pop_max}}
                 </div>
             </div>
             <div class="cartodb-popup-tip-container"></div>
         </div>
     </script>
--->
+
       
     <script type="text/html" id="cartoCSS">
 
@@ -110,7 +112,7 @@
             sublayers: [{
                 sql: 'SELECT * FROM ne_10m_populated_places_simple',
                 cartocss: $('#cartoCSS').html(),
-                interactivity: 'cartodb_id'
+                interactivity: 'cartodb_id, name, pop_max'
             }]
         }
 
@@ -152,6 +154,13 @@
                 var filter=$('#pop_filter').val();
                 layer.getSubLayer(0).setSQL('SELECT * FROM ne_10m_populated_places_simple WHERE pop_max >='+filter)
             });
+
+            cdb.vis.Vis.addInfowindow(
+                map, 
+                layer.getSubLayer(0), 
+                ['cartodb_id', 'name', 'pop_max'],
+                {infowindowTemplate: $('#popup_template').html()}
+            );
         });
 
 
