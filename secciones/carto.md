@@ -3,7 +3,10 @@
 
 - How does CARTO.js works with Leaflet
 - Adding a CARTO layer
-- Styling a CARTO layer
+- Styling a CARTO.js layer
+- Filtering a layer with CARTO
+- Changing a visualization on runtime
+- Popups with CARTO.js
 
 <!-- /MarkdownTOC -->
 
@@ -96,7 +99,7 @@ As you see, it contains:
 Each of those parameters could be used to configure the styling, filters and Popups
 
 
-## Styling a CARTO layer
+## Styling a CARTO.js layer
 
 As mentioned before, CARTO layers are styled using [CartoCSS](https://carto.com/docs/carto-engine/cartocss).
 
@@ -209,5 +212,94 @@ TurboCARTO is a CartoCSS pre-processor that simplifies the task a lot. A `ramp()
 ```
 
 Click [here](https://carto.com/blog/styling-with-turbo-carto) to learn more about TurboCARTO. And [here](https://github.com/CartoDB/turbo-carto) is the source code (it's Open Source!)
+
+## Filtering a layer with CARTO
+
+As we said before, CARTO only renders the result from the SQL query that defines the sublayer.
+
+That makes very easy to filter the data: 
+
+
+```sql
+SELECT * FROM ne_10m_populated_places_simple WHERE pop_max>100000
+```
+
+That query filters out cities with less than `100000` inhabitants. 
+
+```sql
+SELECT * FROM ne_10m_populated_places_simple WHERE featurecla NOT LIKE '% capital'
+```
+
+That filters out cities that are either `Admin-0` or `Admin-1` capital
+
+```sql
+SELECT * FROM ne_10m_populated_places_simple WHERE name ILIKE 'Madrid'
+```
+
+That will only return the data for Madrid
+
+The only requirement here is that `the_geom` is present in the selection. Also `cartodb_id` is necessary for interactivity (more on that later)
+
+## Changing a visualization on runtime
+
+What if we need to set a dynamic filter? Or change the marker color on user interaction? 
+
+We could use a handful of methods that allow to change some visualization parameters at anytime: 
+
+* `sublayer.set()`: set a complete layersource configuration object
+* `sublayer.setSQL()`: set a different SQL query for the sublayer
+* `sublayer.setCartoCSS()`: set a different CartoCSS code for the sublayer
+
+This is specially useful in combination with jQuery for creating some interactive visualizations:
+
+```javascript
+$('#blue').click(function() {
+    //do stuff
+    layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#00F;}')
+});
+```
+
+That changes all markers' color to blue
+
+Using jQuery to capture the value of an input field and then use it as a SQL filter:
+
+```javascript
+$('#apply_filter').click(function (){
+    //do stuff
+    var filter=$('#pop_filter').val();
+    layer.getSubLayer(0).setSQL('SELECT * FROM ne_10m_populated_places_simple WHERE pop_max >='+filter)
+});
+```
+
+## Popups with CARTO.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -11,10 +11,18 @@
           height: 100%;
           padding: 0;
           margin: 0;
+          position:relative;
         }
-
-        #map{position:relative;}
-        #bar{z-index: 2; position:absolute; top:0; right:0; margin:4px;}
+        
+        #bar{
+            position:absolute;
+            z-index: 11;
+            top:0;
+            right:0;
+            margin: 4px;
+            background-color: rgba(255,255,255,0.9);
+            text-align:center;
+        }
     </style>
 
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
@@ -79,9 +87,12 @@
 
     <div id="map"></div>
     <div id="bar">
-        <button id="b1">action1</button>
-        <button id="b2">action2</button>
-    </div>
+         <button id="blue">blue</button>
+         <button id="green">green</button>
+         <button id="red">red</button>
+         <p>Population >= <input type ="text" id="pop_filter"/>
+         <button id="apply_filter">apply</button></p>
+       </div>
 
     <!-- include cartodb.js library -->
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
@@ -121,17 +132,28 @@
         .addTo(map)
         .done(function(layer){
             //do stuff
+            $('#blue').click(function() {
+                //do stuff
+                layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#00F;}')
+            });
+
+            $('#red').click(function (){
+                //do stuff
+                layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#F00;}')
+            });
+
+            $('#green').click(function (){
+                //do stuff
+                layer.getSubLayer(0).setCartoCSS('#layer{marker-fill:#0F0;}')
+            });
+
+            $('#apply_filter').click(function (){
+                //do stuff
+                var filter=$('#pop_filter').val();
+                layer.getSubLayer(0).setSQL('SELECT * FROM ne_10m_populated_places_simple WHERE pop_max >='+filter)
+            });
         });
 
-        $('#b1').click(function() {
-            //do stuff
-            console.log("action1 fired");
-        });
-
-        $('#b2').click(function (){
-            //do stuff
-            console.log("action2 fired");
-        });
 
     </script>
 
