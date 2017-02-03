@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Geoinquietos webmapping | CARTO</title>
+    <title>Geoinquietos Madrid | CARTO</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="http://carto.com/assets/favicon.ico" />
@@ -16,7 +16,7 @@
 
         #bar{
             position:absolute;
-            z-index: 11;
+            z-index: 1;
             top:0;
             right:0;
             margin: 4px;
@@ -95,7 +95,7 @@
          <button id="red">red</button>
          <p>Population >= <input type ="text" id="pop_filter"/>
          <button id="apply_filter">apply</button></p>
-       </div>
+    </div>
 
     <!-- include cartodb.js library -->
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
@@ -127,7 +127,7 @@
         L.tileLayer('https://cartodb-basemaps-d.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
         })
-        .addTo(map,0);
+        .addTo(map);
 
         cartodb.createLayer(map, layerSource,{
          	//layer options

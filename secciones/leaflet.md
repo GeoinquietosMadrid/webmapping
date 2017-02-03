@@ -8,6 +8,8 @@
 - Styling a GeoJSON layer
 - Adding a Pop-up
 - Filtering the layer
+- Events
+- Play with a live example
 
 <!-- /MarkdownTOC -->
 
@@ -186,7 +188,7 @@ We could also apply a filter based on each feature properties, the `filter` opti
 
 ```javascript
 filter: function(feature){
-    if (feature.properties.pop_max < 1000000){
+    if (feature.properties.pop_max < 100000){
         return false
     }
     else {
@@ -195,14 +197,40 @@ filter: function(feature){
 }
 ```
 
-The filter above will only show cities with more than 1M inhabitants. 
+The filter above will only show cities with more than 100K inhabitants. 
 
-##### Play with the full example [here](http://plnkr.co/edit/N453u2wW6jSNCHks37OY?p=preview)!
+
+## [Events](http://leafletjs.com/reference-1.0.3.html#map-event)
+
+Registering an event allows to perform certain actions based on changes on the map state, user interaction, etc
+
+We can easily register an event and set the subsequent actions like this: 
+
+```javascript
+map.on('moveend', function(){
+    coords.innerHTML='<b> CENTER: </b>'+map.getCenter()
+})
+.on('zoomend', function(){
+    zoom.innerHTML='<b>ZOOM: </b>'+map.getZoom()
+});
+```
+
+In this case, we're updating the HTML content of `coords` and `zoom` DOM elements after the map position or zoom level changes. 
+
+We could also listen to layer events: 
+
+```javascript
+.on('click', function(e){
+    map.panTo(e.latlng)
+    coords.innerHTML=e.latlng
+});
+```
+
+In this case, we make use of the event object (referenced with `e`), in order to use one of its properties (`e.latlng`)
+
+
+## [Play with a live example](http://plnkr.co/edit/N453u2wW6jSNCHks37OY?p=preview)
 
 ![mapshot](../img/leafletmap.png)
-
-
-
-
 
 

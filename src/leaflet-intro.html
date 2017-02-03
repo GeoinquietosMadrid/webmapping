@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Geoinquietos Madrid | LeafletJS</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<script src="populated_places.js"></script>
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
 		<style>
-			body {  
-				padding: 0;
-				margin: 0;
-			}
+			html, body, #map {
+	          height: 100%;
+	          padding: 0;
+	          margin: 0;
+	          position:relative;
+	          z-index: 0;
+	        }
 
-			html, body, #map{
-				height: 100%;
-				width: 100%;
-			}
+	        #bar{
+	            position:absolute;
+	            z-index: 1;
+	            top:0;
+	            right:0;
+	            margin: 4px;
+	            padding: 4px;
+	            background-color: rgba(255,255,255,0.9);
+	            text-align:center;
+	            font-family:'Arial';
+	        }
 		</style>
 	</head>
 	<body>
     	<div id='map'></div>
+    	<div id='bar'>
+    	     <div id='coords'></div>
+    	     </br>
+    	     <div id='zoom'></div>
+    	</div>
+
     	<script>
       
       		var map = L.map('map').setView([40, -3], 6);
@@ -47,14 +66,25 @@
 						)
 				},
 				filter: function (feature){
-					if (feature.properties.pop_max < 1000000){
+					if (feature.properties.pop_max < 100000){
 						return false
 					}
 					else {
 						return true
 					}
 				}
-			}).addTo(map);	
+			}).addTo(map,0)
+			.on('click', function(e){
+				map.panTo(e.latlng)
+				coords.innerHTML=e.latlng
+			});	
+
+			map.on('moveend', function(e){
+				coords.innerHTML='<b> CENTER: </b>'+map.getCenter()
+			})
+			.on('zoomend', function(e){
+				zoom.innerHTML='<b>ZOOM: </b>'+map.getZoom()
+			});
     	</script>
   	</body>
 </html>

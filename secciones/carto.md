@@ -7,7 +7,7 @@
 - Filtering a layer with CARTO
 - Changing a visualization on runtime
 - Popups with CARTO.js
-- LIVE EXAMPLE
+- Play with a live example
 
 <!-- /MarkdownTOC -->
 
@@ -312,7 +312,7 @@ This is the where we set the popup content, using [Mustache](https://mustache.gi
 </div>
 ```
 
-## [LIVE EXAMPLE](http://plnkr.co/edit/U2IkgC4BbN3FkOJnaj1u?p=preview)
+## [Play with a live example](http://plnkr.co/edit/U2IkgC4BbN3FkOJnaj1u?p=preview)
 
 
 
