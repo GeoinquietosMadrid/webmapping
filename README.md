@@ -2,6 +2,8 @@
 
 ![img](img/webmapping.png)
 
+## [http://bit.ly/geoinq-webmap](http://bit.ly/geoinq-webmap)
+
 ## Details
 
 
